@@ -22,16 +22,13 @@ module.exports = {
                 title : args.eventInput.title,
                 description : args.eventInput.description,
                 price : +args.eventInput.price,
-                date : new Date(args.eventInput.date),            
+                date : args.eventInput.date,            
             })
             
-            let createdEvent;
-
+            console.log(event)
             let result = await event.save()
 
-            createdEvent = result;
-
-            return createdEvent;
+            return result;
         }
         catch(err){
             console.log(err);
